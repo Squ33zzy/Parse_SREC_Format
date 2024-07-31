@@ -63,7 +63,7 @@ typedef enum
  * @param[inout] None
  * @return: The S-type of the line.
  */
-SrecTpye CheckSType(const char* line);
+extern SrecTpye CheckSType(const char* line);
 
 /**
  * @brief: To check if the line starts with an S-record identifier
@@ -75,7 +75,7 @@ SrecTpye CheckSType(const char* line);
  * @param[inout] None
  * @return: 1 if the line starts with a valid S-record identifier, 0 otherwise.
  */
-uint8_t CheckSrecStart(const char* line);
+extern uint8_t CheckSrecStart(const char* line);
 
 /**
  * @brief: To check the byte count in an S-record line
@@ -88,7 +88,7 @@ uint8_t CheckSrecStart(const char* line);
  * @param[inout] None
  * @return: 1 if the byte count is correct, 0 otherwise.
  */
-uint8_t CheckByteCountSrec(const char* line, uint32_t lengthOfLine);
+extern uint8_t CheckByteCountSrec(const char* line, uint32_t lengthOfLine);
 
 /**
  * @brief: To check the checksum of an S-record line
@@ -100,7 +100,7 @@ uint8_t CheckByteCountSrec(const char* line, uint32_t lengthOfLine);
  * @param[inout] None
  * @return: 1 if the checksum is correct, 0 otherwise.
  */
-uint8_t CheckSumSrec(const char* line);
+extern uint8_t CheckSumSrec(const char* line);
 
 /**
  * @brief: To check the line count in the S-record file
@@ -112,7 +112,7 @@ uint8_t CheckSumSrec(const char* line);
  * @param[inout] None
  * @return: 1 if the line count is correct, 0 otherwise.
  */
-uint8_t CheckLineCount(FILE* srecfile);
+extern uint8_t CheckLineCount(FILE* srecfile);
 
 /**
  * @brief: To determine the data record type in the S-record file
@@ -124,7 +124,7 @@ uint8_t CheckLineCount(FILE* srecfile);
  * @param[inout] None
  * @return: The type of data record.
  */
-DataRecordType CheckDataRecord(FILE* srecfile);
+extern DataRecordType CheckDataRecord(FILE* srecfile);
 
 /**
  * @brief: To check if the S-record line terminates correctly
@@ -137,7 +137,7 @@ DataRecordType CheckDataRecord(FILE* srecfile);
  * @param[inout] None
  * @return: 1 if the termination is correct, 0 otherwise.
  */
-uint8_t CheckSrecTerminate(const char* line, DataRecordType recordType);
+extern uint8_t CheckSrecTerminate(const char* line, DataRecordType recordType);
 
 /**
  * @brief: To check if the line contains only hexadecimal characters
@@ -150,7 +150,7 @@ uint8_t CheckSrecTerminate(const char* line, DataRecordType recordType);
  * @param[inout] None
  * @return: 1 if the line contains only hexadecimal characters, 0 otherwise.
  */
-uint8_t CheckHexaLine(const char* line, uint32_t lengthOfLine);
+extern uint8_t CheckHexaLine(const char* line, uint32_t lengthOfLine);
 
 #endif // !SCRECLIB_H
 
